@@ -23,13 +23,7 @@ Run the following in your terminal to test the script locally:
 node .github/scripts/run-neon-mcp-server.mjs
 ```
 
-### GitHub Actions Testing
-
-Add both of the above environment variables to your GitHub Secrets. Navigate to **Settings** > **Secrets and cariables** > **Actions** to add them.
-
-Trigger the workflow manually from the Actions UI to test it in the GitHub Actions environment.
-
-## Output
+### Output
 
 The script will output the `id` and `name` of the Neon projects associated with the account that created the API key. Example:
 
@@ -41,6 +35,14 @@ id: cool-water-48588839, name: dev-test-twin-workflows-pg16
 id: calm-base-08471876, name: prod-test-twin-workflows-pg16
 id: twilight-frog-20967403, name: prod-ping-thing
 ```
+
+### GitHub Actions Testing - ISSUES
+
+- Current issues relate to GitHub Actions not supporting websockets. I don't know if the modelcontextprotocol `Client` can also support HTTP requests.
+
+~~Add both of the above environment variables to your GitHub Secrets. Navigate to **Settings** > **Secrets and cariables** > **Actions** to add them.~~
+
+~~Trigger the workflow manually from the Actions UI to test it in the GitHub Actions environment.~~
 
 ## Helpful Links
 
