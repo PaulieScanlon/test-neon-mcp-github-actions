@@ -6,7 +6,7 @@ This repository contains a script and workflow that connects to the Neon MCP Ser
 
 ## Getting Started
 
-This example uses both the Neon API and Anthropic API. You'll need API keys for both to run this Action.
+This repo requires a Neon API key and an Anthropic API key.
 
 ### Local Testing
 
