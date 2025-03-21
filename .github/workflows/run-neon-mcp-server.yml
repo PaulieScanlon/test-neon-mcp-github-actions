@@ -1,0 +1,31 @@
+name: Neon MCP Server
+
+on:
+  # schedule:
+  # - cron: '0 0 * * *' # Runs at midnight UTC
+  workflow_dispatch:
+
+env:
+  NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
+  ANTHROPIC_API_KEY: ${{secrets.ANTHROPIC_API_KEY}}
+
+jobs:
+  list-stale-branches:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: |
+          npm install
+
+      - name: Run MCP Server
+        run: |
+          node .github/scripts/run-neon-mcp-server.mjs
